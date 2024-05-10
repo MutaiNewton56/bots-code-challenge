@@ -13,7 +13,11 @@ function YourBotArmy(props) {
 
   const botToRemove = army.find((bot) => bot.id === botId);
   if (botToRemove) {
+    console.log("botToRemove");
+    console.log(botToRemove);
     const updatedBots = [...bots, botToRemove];
+    console.log("updatedBots")
+    console.log(updatedBots)
     setBots(updatedBots);
   }
   };
