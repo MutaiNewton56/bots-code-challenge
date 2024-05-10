@@ -2,8 +2,21 @@ import React from "react";
 
 import SingleBot from "./SingleBot";
 
-function YourBotArmy({ army }) {
-  //your bot army code here...
+function YourBotArmy(props) {
+
+  const { army, setArmy, bots, setBots } = props;
+
+  const deleteBot = (botId) => {
+   
+    const updatedArmy = army.filter((bot) => bot.id !== botId);
+  setArmy(updatedArmy);
+
+  const botToRemove = army.find((bot) => bot.id === botId);
+  if (botToRemove) {
+    const updatedBots = [...bots, botToRemove];
+    setBots(updatedBots);
+  }
+  };
 
   return (
     <div className="ui segment inverted olive bot-army">
@@ -12,7 +25,14 @@ function YourBotArmy({ army }) {
           {/*...and here...*/}
           Your Bot Army
           {army.map((bot) => {
-            return <SingleBot key={bot.id} bot={bot} />;
+            return <div><SingleBot bot={bot} />
+          <button
+            className="ui button fluid"
+            onClick={() => deleteBot(bot.id)}
+          >
+           deleteBot
+          </button>
+          </div>;
           })}
         </div>
       </div>
