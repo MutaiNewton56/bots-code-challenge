@@ -15,6 +15,8 @@ function BotsPage() {
   }, []);
 
   const getBots = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     
     fetch("http://localhost:3000/bots")
       .then((response) => response.json())

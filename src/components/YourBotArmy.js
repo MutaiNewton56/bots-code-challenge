@@ -12,7 +12,7 @@ function YourBotArmy({ army }) {
           {/*...and here...*/}
           Your Bot Army
           {army.map((bot) => {
-            return <singleBot key={bot.id} bot={bot} />;
+            return <SingleBot key={bot.id} bot={bot} />;
           })}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import BotSpecs from "./BotSpecs";
+
 
 function SingleBot({ bot }) {
     return(
